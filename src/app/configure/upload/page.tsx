@@ -52,7 +52,7 @@ const ConfigurePage = () => {
         className={cn(
           "relative flex flex-1 cursor-pointer flex-col items-center justify-center w-full",
           {
-            "cursor-not-allowed": isUploading,
+            "cursor-not-allowed": isUploading || isPending,
             "cursor-pointer": !isUploading,
           }
         )}>
