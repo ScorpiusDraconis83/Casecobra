@@ -2,6 +2,7 @@ import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { z } from "zod";
 import sharp from "sharp";
 import { db } from "@/app/db";
+
 const f = createUploadthing();
 
 export const ourFileRouter = {
@@ -14,11 +15,9 @@ export const ourFileRouter = {
       const { configId } = metadata.input;
 
       const res = await fetch(file.url);
-
       const buffer = await res.arrayBuffer();
 
       const imgMetadata = await sharp(buffer).metadata();
-
       const { width, height } = imgMetadata;
 
       if (!configId) {
@@ -29,6 +28,7 @@ export const ourFileRouter = {
             width: width || 500,
           },
         });
+
         return { configId: configuration.id };
       } else {
         const updatedConfiguration = await db.configuration.update({
@@ -39,6 +39,7 @@ export const ourFileRouter = {
             croppedImageUrl: file.url,
           },
         });
+
         return { configId: updatedConfiguration.id };
       }
     }),
