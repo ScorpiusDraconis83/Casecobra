@@ -33,7 +33,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
   useEffect(() => {
     setShowConfetti(true);
-  });
+  }, [showConfetti]);
 
   let totalPrice = BASE_PRICE;
   if (material == "polycarbonate")
