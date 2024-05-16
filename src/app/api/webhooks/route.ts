@@ -1,6 +1,5 @@
 import { db } from "@/app/db";
 import { stripe } from "@/lib/stripe";
-import { tree } from "next/dist/build/templates/app-page";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
@@ -20,9 +19,9 @@ export async function POST(req: Request) {
     );
 
     if (event.type === "checkout.session.completed") {
-      if (event.data.object.customer_details?.email) {
-        throw new Error("Missing user email");
-      }
+      // if (event.data.object.customer_details?.email) {
+      //   throw new Error("Missing user email");
+      // }
       const session = event.data.object as Stripe.Checkout.Session;
 
       const { userId, orderId } = session.metadata || {
