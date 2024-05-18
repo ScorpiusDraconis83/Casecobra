@@ -3,6 +3,9 @@ import { stripe } from "@/lib/stripe";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
+import { Resend } from "resend";
+import OrderReceivedEmail from "@/components/emails/order-recived-email";
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
@@ -34,7 +37,7 @@ export async function POST(req: Request) {
       const billingAddress = session.customer_details!.address;
       const shippingAddress = session.shipping_details!.address;
 
-      await db.order.update({
+      const updatedOrder = await db.order.update({
         where: {
           id: orderId,
           userId: userId,
@@ -63,9 +66,27 @@ export async function POST(req: Request) {
           },
         },
       });
-
-      return NextResponse.json({ resul: event, ok: true });
+      resend.emails.send({
+        from: "CaseCobra <mynamehello3334@gmail.com>",
+        to: [event.data.object.customer_details.email],
+        subject: "Thanks for your order!",
+        react: OrderReceivedEmail({
+          orderId,
+          orderDate: updatedOrder.createdAt.toLocaleDateString(),
+          // @ts-ignore
+          shippingAddress: {
+            name: session.customer_details!.name!,
+            city: shippingAddress?.city!,
+            country: shippingAddress?.country!,
+            postalCode: shippingAddress?.postal_code!,
+            street: shippingAddress?.line1!,
+            state: shippingAddress?.state!,
+          },
+        }),
+      });
     }
+
+    return NextResponse.json({ resul: event, ok: true });
   } catch (err) {
     console.log(err);
     // there is tool to track user erro called sentry
