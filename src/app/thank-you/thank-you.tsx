@@ -20,7 +20,7 @@ const ThankYou = () => {
   //   console.log(data, "This is data");
   if (data === undefined) {
     return (
-      <div className="w-full m-24 flex justify-center">
+      <div className="w-full mt-24 flex justify-center">
         <div className="flex flex-col items-center gap-2">
           <Loader2 className="h-8 w-8 animate-spin text-zinc-500" />
           <h3 className="font-semibold text-xl">Loading your order...</h3>
@@ -30,7 +30,7 @@ const ThankYou = () => {
   }
   if (data === false) {
     return (
-      <div className="w-full m-24 flex justify-center">
+      <div className="w-full mt-24 flex justify-center">
         <div className="flex flex-col items-center gap-2">
           <Loader2 className="h-8 w-8 animate-spin text-zinc-500" />
           <h3 className="font-semibold text-xl">Verifying your payment...</h3>
