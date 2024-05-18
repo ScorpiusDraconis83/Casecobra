@@ -2,6 +2,8 @@
 
 An e-commerce solution for custom phone cases, built with Next.js 14, Postgres, TypeScript, Tailwind CSS, and Kinde Auth.
 
+![thumbnail(1)](https://github.com/WaelTarabishi/Casecobra/assets/110033974/a9ed9a1f-4d9d-4b5d-85c4-b1bdea4b8e35)
+
 ## Features 🛠️
 
 🛠️ Complete shop built from scratch in Next.js 14
