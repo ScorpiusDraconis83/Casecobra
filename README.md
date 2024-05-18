@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CaseCobra 🐍
 
-## Getting Started
+An e-commerce solution for custom phone cases, built with Next.js 14, Postgres, TypeScript, Tailwind CSS, and Kinde Auth.
 
-First, run the development server:
+![thumbnail(1)](https://github.com/WaelTarabishi/Casecobra/assets/110033974/a9ed9a1f-4d9d-4b5d-85c4-b1bdea4b8e35)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features 🛠️
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🛠️ Complete shop built from scratch in Next.js 14
+- 💻 Beautiful landing page included
+- 🎨 Custom artworks made by a professional illustrator
+- 💳 Secret admin dashboard to manage orders
+- 🖥️ Drag-and-drop file uploads
+- 🛍️ Customers can purchase directly from you
+- 🌟 Clean, modern UI on top of shadcn-ui
+- 🛒 Completely custom phone case configurator
+- 🔑 Authentication using Kinde
+- ✉️ Beautiful thank-you email after purchase
+- ✅ Apple-inspired configuration design
+- ⌨️ 100% written in TypeScript
+- 🎁 And much more
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used 💻
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Next.js 14
+- Postgres
+- TypeScript
+- Tailwind CSS
+- Kinde Auth
 
-## Learn More
+## Getting Started 🚀
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the Repository:** `git clone https://github.com/your-username/CaseCobra.git`
+2. **Install Dependencies:** `npm install`
+3. **Set Up Database:** Configure Postgres database (see `database-setup.md`).
+4. **Start Development Server:** `npm run dev`
+5. **Visit Localhost:** Navigate to `http://localhost:3000`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing 🤝
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Contributions welcome! Open issues or submit pull requests.
 
-## Deploy on Vercel
+## License 📝
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License. See `LICENSE` for more details.
